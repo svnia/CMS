@@ -30,5 +30,22 @@ class Likes {
 
         $q2->execute();
     }
+    public static function getLikes(int $post_id) {
+        global $db;
+
+        $q = $db->prepare("SELECT value FROM likes WHERE post_id = ?");
+
+        $q->bind_param('i', $post_id);
+        $q->execute();
+
+        $result = $q->get_result();
+
+        $likes = 0;
+        while($row = $result->fetch_array()) {
+            $likes += $row['value'];
+        }
+        return $likes;
+
+    }
 }
 ?>
