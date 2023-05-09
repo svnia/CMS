@@ -1,18 +1,84 @@
+body {
+  background-color: #222;
+  color: #fff;
+  margin-top: 0;
+  margin-left: 0;
+  margin-right: 0;
+  font-family: sans-serif;
+  font-size: 16px;
+}
+
+
+#navbar {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  background-color: #333;
+  padding: 10px;
+  position: sticky;
+  top: 0;
+  z-index: 1;
+}
+
+#navbar ul {
+  display: flex;
+  flex-direction: row;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+#navbar li {
+  margin-right: 20px;
+}
+
+#navbar a {
+  color: white;
+  text-decoration: none;
+}
+
+#navbar a:hover {
+  color: #ddd;
+}
+
+
 .photo {
   display: flex;
   flex-direction: column;
   align-items: center;
   margin: 20px 0;
-  
 }
 
-.date {
+.photo img {
+  border: 1px solid #ccc;
+  max-width: 100%;
+}
+
+.photo .vote {
+  float: right;
+  margin-left: 1em;
+}
+
+.photo .vote button {
+  background-color: #333;
+  border: none;
+  color: white;
+  cursor: pointer;
+  padding: 0.5em;
+}
+
+.photo .vote button:hover {
+  background-color: #555;
+}
+
+.photo .date {
   margin-top: 10px;
   font-size: 14px;
   font-style: italic;
 }
 
-.comments {
+.photo .comments {
   margin-top: 20px;
   border: 1px solid #ccc;
   padding: 10px;
@@ -20,33 +86,65 @@
   max-width: 500px;
 }
 
-.comments h2 {
+.photo .comments h2 {
   margin: 0;
+  font-size: 18px;
 }
 
-.comments ul {
+.photo .comments ul {
   list-style: none;
   margin: 0;
   padding: 0;
 }
 
-.comments li {
+.photo .comments li {
   margin-bottom: 10px;
 }
 
-body {
-  background-color: #222;
-  color: #fff;
-  margin-top: 0;
-  margin-left: 0;
-  margin-right: 0;
+
+.login-form {
+  width: 400px;
+  margin: 50px auto;
+  padding: 20px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  background-color: #fff;
+  box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.3);
 }
 
-#Navtool {
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  justify-content: flex-end;
+.login-form h2 {
+  margin-top: 0;
+  margin-bottom: 20px;
+  font-size: 24px;
+  text-align: center;
+}
+
+.login-form label {
+  display: block;
+  margin-bottom: 10px;
+}
+
+.login-form input[type="text"],
+.login-form input[type="password"] {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+.login-form button[type="submit"] {
+  background-color: #333;
+  border: none;
+  color: #fff;
+  cursor: pointer;
+  padding: 10px 20px;
+  border-radius: 5px;
+  width: 100%;
+  margin-top: 20px;
+}
+
+.login-form button[type="submit"]:hover {
+  background-color: #555;
   background-color: #333;
   padding: 10px;
   position: sticky;
@@ -75,5 +173,4 @@ body {
 .vote {
   float: right;
   margin-left: 1em;
-  
 }
