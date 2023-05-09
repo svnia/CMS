@@ -16,5 +16,19 @@ class Likes {
         $this->addLike($like);
 
     }
+    public function addLike(int $like) {
+        global $db;
+        $user_id = $this->user_id;
+        $post_id = $this->post_id;
+        $q = $db->prepare("DELETE FROM likes WHERE user_id = ? AND post_id = ?");
+        $q->bind_param('ii', $user_id, $post_id);
+        $q->execute();
+
+        $q2 = $db->prepare("INSERT likes (id, post_id, user_id, value) VALUES (NULL, ?, ?, ?)");
+
+        $q2->bind_param('iii', $post_id, $user_id, $like);
+
+        $q2->execute();
+    }
 }
 ?>
