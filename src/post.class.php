@@ -117,4 +117,20 @@ class Post {
         if(!$query->execute())
             die("Błąd zapisu do bazy danych");
     }
-    
+    public static function remove(int $id) : bool {
+        global $db;
+        $query = $db->prepare("UPDATE post SET removed = true WHERE id = ?");
+        $query->bind_param('i', $id);
+        if($query->execute())
+            return true;
+        else
+            return false;
+    }
+
+
+public function getLikes() {
+    $likes = Likes::getLikes($this->getId());
+    return $likes;
+}
+}
+?>
