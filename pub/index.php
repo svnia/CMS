@@ -29,7 +29,7 @@ Route::add('/upload', function() {
     else {
         //zwróć kod 403 czyli zabronione
         http_response_code(403);
-    }    
+    }
 });
 
 Route::add('/upload', function() {
@@ -39,8 +39,7 @@ Route::add('/upload', function() {
     if(isset($_POST['submit']))  {
         Post::upload($_FILES['uploadedFile']['tmp_name'], $_POST['title'], $_POST['userId']);
     }
-    //TODO: zmienić na ścieżkę względną
-    header("Location: http://localhost/sadistic/pub");
+    header("Location: http://localhost/CMS/pub");
 }, 'post');
 
 Route::add('/register', function() {
@@ -53,7 +52,7 @@ Route::add('/register', function(){
     global $twig;
     if(isset($_POST['submit'])) {
         User::register($_POST['email'], $_POST['password']);
-        header("Location: http://localhost/sadistic/pub");
+        header("Location: http://localhost/CMS/pub");
     }
 }, 'post');
 
@@ -68,7 +67,7 @@ Route::add('/login', function() {
     if(isset($_POST['submit'])) {
         if(User::login($_POST['email'], $_POST['password'])) {
             //jeśli zalogowano poprawnie to wyświetl główną stronę
-            header("Location: http://localhost/sadistic/pub");
+            header("Location: /CMS/pub");
         } else {
             //jeśli nie zalogowano poprawnie wyświetl ponownie stronę logowania z komunikatem
             $twigData = array("pageTitle" => "Zaloguj użytkownika",
@@ -97,7 +96,7 @@ Route::add('/like/([0-9]*)', function($post_id) {
     }
     $user_id = $_SESSION['user']->getId();
     $like = new Likes($post_id, $user_id, 1);
-    header("Location: /sadistic/pub");
+    header("Location: http://localhost/CMS/pub");
 });
 
 Route::add('/dislike/([0-9]*)', function($post_id) {
@@ -106,14 +105,14 @@ Route::add('/dislike/([0-9]*)', function($post_id) {
     }
     $user_id = $_SESSION['user']->getId();
     $like = new Likes($post_id, $user_id, -1);
-    header("Location: /sadistic/pub");
+    header("Location: http://localhost/CMS/pub");
 });
 
 
 
 
 
-Route::run('/sadistic/pub');
+Route::run('/CMS/pub');
 
 
 ?>
