@@ -102,7 +102,7 @@ body {
 }
 
 
-.login-form {
+form {
   width: 400px;
   margin: 50px auto;
   padding: 20px;
@@ -112,27 +112,27 @@ body {
   box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.3);
 }
 
-.login-form h2 {
+h2 {
   margin-top: 0;
   margin-bottom: 20px;
   font-size: 24px;
   text-align: center;
 }
 
-.login-form label {
+label {
   display: block;
   margin-bottom: 10px;
 }
 
-.login-form input[type="text"],
-.login-form input[type="password"] {
+input[type="text"],
+input[type="password"] {
   width: 100%;
   padding: 10px;
   border: 1px solid #ccc;
   border-radius: 5px;
 }
 
-.login-form button[type="submit"] {
+button[type="submit"] {
   background-color: #333;
   border: none;
   color: #fff;
@@ -143,7 +143,7 @@ body {
   margin-top: 20px;
 }
 
-.login-form button[type="submit"]:hover {
+button[type="submit"]:hover {
   background-color: #555;
   background-color: #333;
   padding: 10px;
