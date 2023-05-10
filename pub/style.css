@@ -66,8 +66,7 @@ h1 {
 /* styl dla postów */
 #post {
   margin-bottom: 20px;
-  border: 1px solid #ccc;
-  border-radius: 5px;
+  border: 10px solid #ccc;
   padding: 20px;
 }
 
