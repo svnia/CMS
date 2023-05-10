@@ -107,7 +107,7 @@ h1 {
 }
 
 /* styl dla formularza logowania */
-form {
+#pageContainer {
   max-width: 600px;
   margin: auto;
   padding: 20px;
