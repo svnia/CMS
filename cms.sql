@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Czas generowania: 26 Kwi 2023, 12:03
+-- Czas generowania: 10 Maj 2023, 11:47
 -- Wersja serwera: 10.4.24-MariaDB
 -- Wersja PHP: 8.0.19
 
@@ -18,7 +18,7 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Baza danych: `cms_js`
+-- Baza danych: `cms`
 --
 
 -- --------------------------------------------------------
@@ -45,7 +45,10 @@ INSERT INTO `likes` (`id`, `post_id`, `user_id`, `value`) VALUES
 (16, 32, 4, 1),
 (19, 33, 4, 1),
 (20, 34, 4, -1),
-(22, 35, 4, -1);
+(22, 35, 4, -1),
+(23, 37, 6, 1),
+(26, 39, 6, 1),
+(27, 38, 6, 1);
 
 -- --------------------------------------------------------
 
@@ -67,11 +70,8 @@ CREATE TABLE `post` (
 --
 
 INSERT INTO `post` (`id`, `timestamp`, `filename`, `title`, `userId`, `removed`) VALUES
-(32, '2023-03-29 12:07:24', 'img/d1eb7365e8f15afbad65b24b2fb08c32ba658399e6798a8912e37ed289cee06d.webp', '', 3, 0),
-(33, '2023-03-29 12:10:18', 'img/bdf8c5e6d6da99c8d2e11d7333e6896be560c4c8ad2863ba640681c6606426df.webp', 'sdasda', 3, 0),
-(34, '2023-04-12 10:31:32', 'img/fdab8997d109d5da2dec3b85275500cb821f4ef74fa7241d4409b1950c0a880c.webp', 'shrek', 3, 0),
-(35, '2023-04-19 11:35:32', 'img/49785397644c7edd89598df639ef6883e6586345088bf233ceaf959808b8c768.webp', 'shrek i bagno', 4, 0),
-(36, '2023-04-26 10:28:31', 'img/079121303a9d93064b107490ebec417ee6f21115ff590ebf90f5ac007994affb.webp', 'gówno ', 4, 0);
+(38, '2023-05-10 11:31:50', 'img/3e66a07232fa63a24997484b973672f8c2600de0c43b06ba6bb632c73189a5d1.webp', 'mateusztyda', 6, 0),
+(39, '2023-05-10 11:32:50', 'img/9776bce0a983bf79488c3d18ea680c737e107154a6a96d59166abdc8ad61ce81.webp', 'piesek', 6, 0);
 
 -- --------------------------------------------------------
 
@@ -92,7 +92,10 @@ CREATE TABLE `user` (
 INSERT INTO `user` (`id`, `email`, `password`) VALUES
 (3, 'admin@gmail.com', '$argon2i$v=19$m=65536,t=4,p=1$ckZNTmlXN2RqdkxHSEI4bw$PGCbzNxX+BDxAiyuMQTEXSL+FEhAVW7Yk5taypMwyLw'),
 (4, 'admin1@gmail.com', '$argon2i$v=19$m=65536,t=4,p=1$TGhtSHpNbFI4T0wuZExnNg$seHgC/xXaxEd2YzFrt+X5AnoLNLc2/Ul65Q1+2jt+64'),
-(5, 'adf@gmail.com', '$argon2i$v=19$m=65536,t=4,p=1$WFdGbzhveWQucDBuN0E2Tg$+HB8SFqqUV2K9NiZ9FaSAY57Rv6+rdN+6v0zub2FV/I');
+(5, 'adf@gmail.com', '$argon2i$v=19$m=65536,t=4,p=1$WFdGbzhveWQucDBuN0E2Tg$+HB8SFqqUV2K9NiZ9FaSAY57Rv6+rdN+6v0zub2FV/I'),
+(6, 'tomaszpiesikkontakt@gmail.com', '$argon2i$v=19$m=65536,t=4,p=1$RWpYd3RZakNQUFFYa0o4OA$TNiXkpwvYQ4JJ8k2QjqGXhLhlYvgTsePIef7m2coFeM'),
+(7, 'tomaszpiesikksontakt@gmail.com', '$argon2i$v=19$m=65536,t=4,p=1$Rk1FQ0FPRjhCYW9ZcDgvUQ$gOa+OpSfhqnmiD34BdKT73WoIL4grP1hSRHVEEJKKq8'),
+(8, 'tomaszpiesikksontakt@gmail.com', '$argon2i$v=19$m=65536,t=4,p=1$R004ZUN3dmplSk5BUUNEQQ$FIt0vwHUCDh1aFBMdlbfKAyTxDgB9pWFssiudUlyWjE');
 
 --
 -- Indeksy dla zrzutów tabel
@@ -124,19 +127,19 @@ ALTER TABLE `user`
 -- AUTO_INCREMENT dla tabeli `likes`
 --
 ALTER TABLE `likes`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=23;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=28;
 
 --
 -- AUTO_INCREMENT dla tabeli `post`
 --
 ALTER TABLE `post`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=37;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=40;
 
 --
 -- AUTO_INCREMENT dla tabeli `user`
 --
 ALTER TABLE `user`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
