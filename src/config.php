@@ -2,7 +2,7 @@
 
 require("./../vendor/autoload.php");
 
-$db = new mysqli("localhost", "root", "", "cms_js");
+$db = new mysqli("localhost", "root", "", "cms");
 
 
 require('Post.class.php');
